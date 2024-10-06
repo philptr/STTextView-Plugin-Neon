@@ -24,6 +24,8 @@ import TreeSitterJSON
 import TreeSitterJSONQueries
 import TreeSitterMarkdown
 import TreeSitterMarkdownQueries
+import TreeSitterObjC
+import TreeSitterObjCQueries
 import TreeSitterPHP
 import TreeSitterPHPQueries
 import TreeSitterPython
@@ -55,6 +57,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
     case javascript
     case json
     case markdown
+    case objc
     case php
     case python
     case ruby
@@ -89,6 +92,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             tree_sitter_json()
         case .markdown:
             tree_sitter_markdown()
+        case .objc:
+            tree_sitter_objc()
         case .php:
             tree_sitter_php()
         case .python:
@@ -134,6 +139,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
             TreeSitterJSONQueries.Query.highlightsFileURL
         case .markdown:
             TreeSitterMarkdownQueries.Query.highlightsFileURL
+        case .objc:
+            TreeSitterObjCQueries.Query.highlightsFileURL
         case .php:
             TreeSitterPHPQueries.Query.highlightsFileURL
         case .python:
@@ -178,6 +185,8 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
         case .json:
             nil
         case .markdown:
+            nil
+        case .objc:
             nil
         case .php:
             nil
