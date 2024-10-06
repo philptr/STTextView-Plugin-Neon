@@ -187,7 +187,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
         case .markdown:
             nil
         case .objc:
-            nil
+            TreeSitterObjCQueries.Query.localsFileURL
         case .php:
             nil
         case .python:

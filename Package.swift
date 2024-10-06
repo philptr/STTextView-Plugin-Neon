@@ -119,7 +119,7 @@ let package = Package(
         .target(name: "TreeSitterMarkdownInline", cSettings: [.headerSearchPath("src")]),
         .target(name: "TreeSitterMarkdownInlineQueries", resources: [.copy("highlights.scm"), .copy("injections.scm")]),
         .target(name: "TreeSitterObjC", cSettings: [.headerSearchPath("src")]),
-        .target(name: "TreeSitterObjCQueries", resources: [.copy("highlights.scm")]),
+        .target(name: "TreeSitterObjCQueries", resources: [.copy("highlights.scm"), .copy("locals.scm")]),
         .target(name: "TreeSitterOCaml", cSettings: [.headerSearchPath("src")]),
         .target(name: "TreeSitterOCamlQueries", resources: [.copy("highlights.scm"), .copy("locals.scm"), .copy("tags.scm")]),
         .target(name: "TreeSitterPerl", cSettings: [.headerSearchPath("src")]),
