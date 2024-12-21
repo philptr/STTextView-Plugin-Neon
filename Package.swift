@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "STTextView-Plugin-Neon",
-    platforms: [.macOS(.v12)],
+    platforms: [.macOS(.v13)],
     products: [
         .library(
             name: "STTextView-Plugin-Neon",
@@ -13,8 +13,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/STTextView", branch: "main"),
-        .package(url: "https://github.com/ChimeHQ/Neon", from: "0.6.0"),
-        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0")
+        .package(url: "https://github.com/philptr/Neon", branch: "0.6.0"),
+        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.9.0"),
+        .package(url: "https://github.com/tree-sitter/tree-sitter", .upToNextMinor(from: "0.23.0")),
     ],
     targets: [
         .target(
@@ -29,6 +30,7 @@ let package = Package(
         .target(
             name: "TreeSitterResource",
             dependencies: [
+                .product(name: "TreeSitter", package: "tree-sitter"),
                 .product(name: "SwiftTreeSitter", package: "SwiftTreeSitter"),
                 .target(name: "TreeSitterBash"),
                 .target(name: "TreeSitterBashQueries"),

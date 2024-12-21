@@ -2,6 +2,7 @@ import Cocoa
 import STTextView
 import Neon
 
+@MainActor
 class STTextViewSystemInterface: TextSystemInterface {
 
     typealias AttributeProvider = (Neon.Token) -> [NSAttributedString.Key: Any]?
